@@ -4,7 +4,7 @@ import java.util.List;
 
 public interface Dao<T,K> {
 
-    T getOne(K Long);
+    T getOne(K id);
 
     List<T> getAll();
 
