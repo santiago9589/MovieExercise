@@ -4,10 +4,13 @@ import com.api.backendmovie.dao.Dao;
 import com.api.backendmovie.entities.Movie;
 import com.api.backendmovie.repositories.MovieRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+
+@Service
 public class MovieServices implements Dao<Movie,Long> {
 
     @Autowired

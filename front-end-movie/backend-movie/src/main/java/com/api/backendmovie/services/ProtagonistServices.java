@@ -6,10 +6,12 @@ import com.api.backendmovie.entities.Protagonist;
 import com.api.backendmovie.repositories.MovieRepository;
 import com.api.backendmovie.repositories.ProtagonistRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class ProtagonistServices implements Dao<Protagonist,Long> {
 
     @Autowired
