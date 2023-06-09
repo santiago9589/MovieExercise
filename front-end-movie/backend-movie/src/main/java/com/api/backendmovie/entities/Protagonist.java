@@ -1,15 +1,16 @@
 package com.api.backendmovie.entities;
 
 import jakarta.persistence.*;
-import org.springframework.data.annotation.Id;
 
+
+import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
 
 @Entity
 @Table(name = "Protagonists")
-public class Protagonist {
+public class Protagonist implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -22,7 +23,6 @@ public class Protagonist {
     private Date dateOfBirth;
 
     @ManyToOne
-    @JoinColumn(name = "movie_id")
     private Movie movie;
 
 

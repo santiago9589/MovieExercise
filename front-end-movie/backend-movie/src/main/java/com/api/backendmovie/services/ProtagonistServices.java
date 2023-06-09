@@ -18,7 +18,7 @@ public class ProtagonistServices implements Dao<Protagonist,Long> {
     private ProtagonistRepository ProtagonistRepository;
 
     @Override
-    public Protagonist getOne(Long id) {
+    public Protagonist getOneRecord(Long id) {
 
         Optional<Protagonist> protagonist = ProtagonistRepository.findById(id);
 
@@ -29,9 +29,16 @@ public class ProtagonistServices implements Dao<Protagonist,Long> {
     }
 
     @Override
-    public List<Protagonist> getAll() {
+    public List<Protagonist> getAllRecords() {
 
         List<Protagonist> listProtagonist = ProtagonistRepository.findAll();
         return listProtagonist;
+    }
+
+    @Override
+    public Protagonist addOneRecord(Protagonist protagonist) {
+        Protagonist newProtagonist = ProtagonistRepository.save(protagonist);
+
+        return newProtagonist;
     }
 }

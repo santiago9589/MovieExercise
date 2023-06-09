@@ -4,9 +4,12 @@ import java.util.List;
 
 public interface Dao<T,K> {
 
-    T getOne(K id);
+    T getOneRecord(K id);
 
-    List<T> getAll();
+    List<T> getAllRecords();
+
+
+    T addOneRecord(T value);
 
 
 }

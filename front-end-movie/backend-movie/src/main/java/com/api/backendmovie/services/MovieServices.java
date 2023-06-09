@@ -17,7 +17,7 @@ public class MovieServices implements Dao<Movie,Long> {
     private MovieRepository MovieRepository;
 
     @Override
-    public Movie getOne(Long id) {
+    public Movie getOneRecord(Long id) {
 
         Optional<Movie> movie = MovieRepository.findById(id);
 
@@ -28,9 +28,16 @@ public class MovieServices implements Dao<Movie,Long> {
     }
 
     @Override
-    public List<Movie> getAll() {
+    public List<Movie> getAllRecords() {
 
         List<Movie> listMovie = MovieRepository.findAll();
         return listMovie;
+    }
+
+    @Override
+    public Movie addOneRecord(Movie movie) {
+        Movie newMovie = MovieRepository.save(movie);
+
+        return newMovie;
     }
 }

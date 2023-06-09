@@ -3,14 +3,15 @@ package com.api.backendmovie.entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
-import org.springframework.data.annotation.Id;
 
+
+import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
 @Entity
 @Table(name = "Movies")
-public class Movie {
+public class Movie implements Serializable {
 
 
     @Id
@@ -29,7 +30,7 @@ public class Movie {
 
     private String resumenMovie;
 
-    @OneToMany(mappedBy = "nameProtagonist")
+    @OneToMany(mappedBy = "movie")
     @JsonIgnore
     private List<Protagonist> listProtagonist;
 

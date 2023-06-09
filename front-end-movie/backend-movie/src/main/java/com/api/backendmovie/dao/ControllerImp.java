@@ -4,10 +4,10 @@ import java.util.List;
 
 public interface ControllerImp <T,K>{
 
-    T getOne(K id);
+    T getOneController(K id);
 
-    List<T> getAll();
+    List<T> getAllController();
 
-
+    T addOneController(T value);
 
 }
