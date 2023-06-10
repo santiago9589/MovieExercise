@@ -40,4 +40,26 @@ public class MovieServices implements Dao<Movie,Long> {
 
         return newMovie;
     }
+
+
+    @Override
+    public String deleteOneRecord(Long id) {
+        MovieRepository.deleteById(id);
+        return "deleted successfully";
+    }
+
+    @Override
+    public Movie updateOneRecord(Movie movie,Long id) {
+
+        Movie updateMovie = MovieRepository.getReferenceById(id);
+
+       updateMovie.setNameMovie(movie.getNameMovie());
+       updateMovie.setGenderMovie(movie.getGenderMovie());
+       updateMovie.setRaiting(movie.getRaiting());
+       updateMovie.setImageMovie(movie.getImageMovie());
+
+       MovieRepository.save(updateMovie);
+
+        return updateMovie;
+    }
 }

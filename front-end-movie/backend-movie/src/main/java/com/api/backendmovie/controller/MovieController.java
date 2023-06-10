@@ -3,10 +3,7 @@ package com.api.backendmovie.controller;
 import com.api.backendmovie.dao.ControllerImp;
 import com.api.backendmovie.entities.Movie;
 import com.api.backendmovie.services.MovieServices;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -48,6 +45,19 @@ public class MovieController implements ControllerImp<Movie,Long> {
         return newMovie;
     }
 
+    @DeleteMapping("/deleteOne/{id}")
+    @Override
+    public String deleteOneController(Long id) {
+        String response = movieServices.deleteOneRecord(id);
+        return response;
+    }
+
+    @RequestMapping("/updateOne/{id}")
+    @Override
+    public Movie updateOneController(Movie movie,@PathVariable Long id) {
+        Movie updateMovie = movieServices.updateOneRecord(movie,id);
+        return updateMovie;
+    }
 
 
 

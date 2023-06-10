@@ -1,12 +1,8 @@
 package com.api.backendmovie.controller;
-
 import com.api.backendmovie.dao.ControllerImp;
 import com.api.backendmovie.entities.Protagonist;
 import com.api.backendmovie.services.ProtagonistServices;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 
 import java.util.List;
@@ -40,5 +36,19 @@ public class ProtagonistController implements ControllerImp<Protagonist,Long> {
     public Protagonist addOneController(Protagonist protagonist) {
         Protagonist protagonistFound = protagonistServices.addOneRecord(protagonist);
         return protagonistFound;
+    }
+
+    @DeleteMapping("/deleteOne/{id}")
+    @Override
+    public String deleteOneController(@PathVariable Long id) {
+        String response = protagonistServices.deleteOneRecord(id);
+        return response;
+    }
+
+    @RequestMapping("/updateOne/{id}")
+    @Override
+    public Protagonist updateOneController(Protagonist protagonist,@PathVariable Long id) {
+        Protagonist updateProtagonist = protagonistServices.updateOneRecord(protagonist,id);
+        return updateProtagonist;
     }
 }

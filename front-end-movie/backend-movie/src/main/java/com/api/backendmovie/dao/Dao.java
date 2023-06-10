@@ -8,8 +8,9 @@ public interface Dao<T,K> {
 
     List<T> getAllRecords();
 
-
     T addOneRecord(T value);
 
+    String deleteOneRecord(K id);
 
+    T updateOneRecord(T value,K id);
 }

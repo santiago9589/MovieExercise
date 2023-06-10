@@ -10,4 +10,7 @@ public interface ControllerImp <T,K>{
 
     T addOneController(T value);
 
+    String deleteOneController(K id);
+
+    T updateOneController(T value,K id);
 }
