@@ -102,7 +102,6 @@ export const api = {
             throw new Error("error");
         }
     },
-
     deleteOneMovie:async (id:string): Promise<string> => {
 
         try {
@@ -116,7 +115,6 @@ export const api = {
             throw new Error("error");
         }
     },
-
     updateOneMovie:async (id:string,movie:Movie): Promise<Movie> => {
 
         try {
