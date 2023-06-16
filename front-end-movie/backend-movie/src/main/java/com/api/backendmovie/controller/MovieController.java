@@ -19,9 +19,9 @@ public class MovieController implements ControllerImp<Movie,Long> {
     }
 
 
- @GetMapping("/getOneMovie")
+ @GetMapping("/getOneMovie/{id}")
     @Override
-    public Movie getOneController(Long id) {
+    public Movie getOneController(@PathVariable Long id) {
 
         Movie movieFound = movieServices.getOneRecord(id);
         return movieFound;
@@ -47,7 +47,7 @@ public class MovieController implements ControllerImp<Movie,Long> {
 
     @DeleteMapping("/deleteOne/{id}")
     @Override
-    public String deleteOneController(Long id) {
+    public String deleteOneController(@PathVariable Long id) {
         String response = movieServices.deleteOneRecord(id);
         return response;
     }

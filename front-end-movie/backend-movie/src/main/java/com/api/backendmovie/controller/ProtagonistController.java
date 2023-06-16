@@ -17,9 +17,9 @@ public class ProtagonistController implements ControllerImp<Protagonist,Long> {
         this.protagonistServices = protagonistServices;
     }
 
-    @GetMapping("/getOneProtagonist")
+    @GetMapping("/getOneProtagonist/{id}")
     @Override
-    public Protagonist getOneController(Long id) {
+    public Protagonist getOneController(@PathVariable Long id) {
         Protagonist ProtagonistFound = protagonistServices.getOneRecord(id);
         return ProtagonistFound;
     }
