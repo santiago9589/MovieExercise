@@ -15,7 +15,29 @@ const movieSlice = createSlice({
     name: "movieState",
     initialState: initialAppState,
     reducers: {
-      
+        START_GET_MOVIE(state){
+            state
+        },
+       
+        PROSS_GET_MOVIE(state,action: PayloadAction<Movie[]>){
+            state.movies = action.payload
+        },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         PROSS_ADD_MOVIE(state, action: PayloadAction<Movie>) {
             state.movies = [...state.movies, action.payload]
         },
@@ -24,11 +46,7 @@ const movieSlice = createSlice({
                 return movie.id !== action.payload.id
             })
         },
-        PROSS_GET_MOVIE(state,action: PayloadAction<Movie[]>){
-            state.movies = action.payload
-        }
-       
     }
 })
-export const { PROSS_ADD_MOVIE,PROSS_DELETE_MOVIE,PROSS_GET_MOVIE } = movieSlice.actions
+export const { PROSS_ADD_MOVIE,PROSS_DELETE_MOVIE,PROSS_GET_MOVIE,START_GET_MOVIE } = movieSlice.actions
 export default movieSlice.reducer

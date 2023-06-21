@@ -38,8 +38,8 @@ public class MovieController implements ControllerImp<Movie,Long> {
 
     @PostMapping("/addOne")
     @Override
-    public Movie addOneController(Movie movie) {
-
+    public Movie addOneController(@RequestBody Movie movie) {
+        System.out.println(movie);
         Movie newMovie = movieServices.addOneRecord(movie);
 
         return newMovie;

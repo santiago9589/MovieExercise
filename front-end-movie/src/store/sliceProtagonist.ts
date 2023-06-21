@@ -15,7 +15,6 @@ const protagonistSlice = createSlice({
     name: "protagonistState",
     initialState: initialAppState,
     reducers: {
-       
         PROSS_ADD_PROTAGONIST(state, action: PayloadAction<Protagonist>) {
             state.protagonists = [...state.protagonists, action.payload]
         },
