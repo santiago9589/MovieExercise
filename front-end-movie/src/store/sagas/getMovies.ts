@@ -2,7 +2,7 @@ import { call, put, takeLatest } from 'redux-saga/effects';
 import type { PayloadAction } from '@reduxjs/toolkit'
 import { Movie } from '../../../types/Movie';
 import { api } from '../../../api/api';
-import {PROSS_ADD_MOVIE, PROSS_GET_MOVIE,START_GET_MOVIE} from "../sliceMovie"
+import {PROSS_GET_MOVIE} from "../sliceMovie"
 
 function* getMovieData(action:PayloadAction<Movie>) {
     try {

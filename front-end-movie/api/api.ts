@@ -89,11 +89,23 @@ export const api = {
         }
     },
     addOneMovie: async (movie: Movie): Promise<Movie> => {
+        
+        console.log(movie)
+
+        const movieJson = JSON.stringify(movie)
+     
+
         try {
 
-            const movieAdded = await axios.post("http://localhost:8080/api/movie/addOne", {
-                movie
-            });
+            const movieAdded = await axios.post("http://localhost:8080/api/movie/addOne",movie, 
+            {
+                headers: { 'Content-Type': 'application/json' }
+            }, 
+
+
+
+
+            );
 
             return movieAdded.data;
 

@@ -18,29 +18,28 @@ const movieSlice = createSlice({
         START_GET_MOVIE(state){
             state
         },
-       
         PROSS_GET_MOVIE(state,action: PayloadAction<Movie[]>){
             state.movies = action.payload
         },
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         PROSS_ADD_MOVIE(state, action: PayloadAction<Movie>) {
-            state.movies = [...state.movies, action.payload]
+            state
+            action
         },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
         PROSS_DELETE_MOVIE(state, action: PayloadAction<Movie>) {
             state.movies = state.movies.filter((movie)=>{
                 return movie.id !== action.payload.id

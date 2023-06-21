@@ -1,7 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit';
 import appReducer from './combineReducers';
 import createSagaMiddleware from 'redux-saga';
-import {mySagaGetMovie} from "./sagas/getMovies"
+import { rootSaga } from './sagas/rootSaga';
 
 const sagaMiddleware = createSagaMiddleware();
 
@@ -13,4 +13,4 @@ export const store = configureStore({
     middleware:(getDefaultMiddleware) => getDefaultMiddleware().concat(sagaMiddleware)
 })
 
-sagaMiddleware.run(mySagaGetMovie);
+sagaMiddleware.run(rootSaga);

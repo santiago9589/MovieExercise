@@ -4,7 +4,7 @@ export interface Movie {
     id: number,
     nameMovie: string,
     genderMovie: string,
-    datePublished: Date,
+    datePublished: Date | null,
     Raiting: number,
     imageMovie: string,
     resumenMovie: string,
