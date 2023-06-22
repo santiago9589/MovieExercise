@@ -29,26 +29,12 @@ const movieSlice = createSlice({
             state
             action
         },
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-        PROSS_DELETE_MOVIE(state, action: PayloadAction<Movie>) {
-            state.movies = state.movies.filter((movie)=>{
-                return movie.id !== action.payload.id
-            })
+        PROSS_DELETE_MOVIE(state, action: PayloadAction<{id:number}>) {
+            state
+            action
         },
+
+
     }
 })
 export const { PROSS_UPDATE_MOVIE,PROSS_ADD_MOVIE,PROSS_DELETE_MOVIE,PROSS_GET_MOVIE,START_GET_MOVIE } = movieSlice.actions

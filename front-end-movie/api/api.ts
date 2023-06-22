@@ -26,7 +26,7 @@ export const api = {
             throw new Error("error");
         }
     },
-    getOneProtagonist: async (id: string): Promise<Protagonist> => {
+    getOneProtagonist: async (id: number): Promise<Protagonist> => {
         try {
             const getProtagonist = await axios.get(`http://localhost:8080/api/protagonist/getOneProtagonist/${id}`);
 
@@ -35,7 +35,7 @@ export const api = {
             throw new Error("error");
         }
     },
-    deleteProtagonist: async (id: string): Promise<string> => {
+    deleteProtagonist: async (id: number): Promise<string> => {
 
         try {
 
@@ -48,7 +48,7 @@ export const api = {
             throw new Error("error");
         }
     },
-    updateProtagonist: async (id: string, protagonist: Protagonist): Promise<Protagonist> => {
+    updateProtagonist: async (id: number, protagonist: Protagonist): Promise<Protagonist> => {
 
         try {
 
@@ -75,7 +75,7 @@ export const api = {
             throw new Error("error");
         }
     },
-    getOneMovie: async (id: string): Promise<Movie> => {
+    getOneMovie: async (id: number): Promise<Movie> => {
 
         try {
 
@@ -107,7 +107,7 @@ export const api = {
             throw new Error("error");
         }
     },
-    deleteOneMovie: async (id: string): Promise<string> => {
+    deleteOneMovie: async (id: number): Promise<string> => {
 
         try {
 

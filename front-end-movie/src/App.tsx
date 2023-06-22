@@ -4,7 +4,7 @@ import { Movie } from "./../types/Movie"
 import { api } from "./../api/api"
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
-import { PROSS_ADD_MOVIE, START_GET_MOVIE, PROSS_UPDATE_MOVIE } from "./store/sliceMovie"
+import { PROSS_ADD_MOVIE, START_GET_MOVIE, PROSS_UPDATE_MOVIE,PROSS_DELETE_MOVIE } from "./store/sliceMovie"
 import { Protagonist } from '../types/Protagonist';
 
 interface appState {
@@ -60,6 +60,9 @@ function App() {
 
         }))
       }}>MODIFICAR</button>
+      <button onClick={() => {
+        dispatch(PROSS_DELETE_MOVIE({id:2}))
+      }}>ELIMINAR</button>
 
     </>
   )
