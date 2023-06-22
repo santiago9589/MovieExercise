@@ -64,7 +64,7 @@ export const api = {
         }
     },
 
-    //Movies
+    //MOVIE
 
 
     getOneMovie: async (id: number): Promise<Movie> => {
@@ -80,11 +80,6 @@ export const api = {
             throw new Error("error");
         }
     },
-
-
-
-
-
     getMovies: async (): Promise<Movie[]> => {
         try {
             const movieList = await axios.get("http://localhost:8080/api/movie/getList");
@@ -144,6 +139,103 @@ export const api = {
             throw new Error("error");
         }
     },
+     
+    //MOVIE
+
+
+    //MOCK
+
+    getMoviesMock: async (): Promise<Movie[]> => {
+        try {
+            const movieList = [
+                {
+                    id: 1,
+                    nameMovie: "juancho",
+                    genderMovie: "juancho",
+                    datePublished: new Date(),
+                    Raiting: 2,
+                    imageMovie: "juancho",
+                    resumenMovie: "juancho",
+                    listProtagonist: []
+                },
+                {
+                    id: 2,
+                    nameMovie: "juancho",
+                    genderMovie: "juancho",
+                    datePublished: new Date(),
+                    Raiting: 2,
+                    imageMovie: "juancho",
+                    resumenMovie: "juancho",
+                    listProtagonist: []
+                },
+                {
+                    id: 3,
+                    nameMovie: "juancho",
+                    genderMovie: "juancho",
+                    datePublished: new Date(),
+                    Raiting: 2,
+                    imageMovie: "juancho",
+                    resumenMovie: "juancho",
+                    listProtagonist: []
+                }
+            ];
+
+            return movieList;
+        } catch (error) {
+            throw new Error("error");
+        }
+    },
+    addOneMovieMock: async (movie: Movie): Promise<Movie> => {
+        try {
+            return {
+                id: 60,
+                nameMovie: "juancho",
+                genderMovie: "juancho",
+                datePublished: new Date(),
+                Raiting: 2,
+                imageMovie: "juancho",
+                resumenMovie: "juancho",
+                listProtagonist: []
+            };
+
+        } catch (error) {
+
+            throw new Error("error");
+        }
+    },
+    deleteOneMovieMock: async (id: number): Promise<string> => {
+
+        try {
+
+            return "borrado"
+
+        } catch (error) {
+
+            throw new Error("error");
+        }
+    },
+    updateOneMovieMock: async (id: number, movie: Movie): Promise<Movie> => {
+
+        try {
+
+            return {
+                id: 60,
+                nameMovie: "juancho",
+                genderMovie: "juancho",
+                datePublished: new Date(),
+                Raiting: 2,
+                imageMovie: "juancho",
+                resumenMovie: "juancho",
+                listProtagonist: []
+            };
+
+        } catch (error) {
+
+            throw new Error("error");
+        }
+    },
+
+    //MOCK
 
 }
 
