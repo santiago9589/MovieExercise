@@ -66,15 +66,7 @@ export const api = {
 
     //Movies
 
-    getMovies: async (): Promise<Movie[]> => {
-        try {
-            const movieList = await axios.get("http://localhost:8080/api/movie/getList");
 
-            return movieList.data;
-        } catch (error) {
-            throw new Error("error");
-        }
-    },
     getOneMovie: async (id: number): Promise<Movie> => {
 
         try {
@@ -85,6 +77,20 @@ export const api = {
 
         } catch (error) {
 
+            throw new Error("error");
+        }
+    },
+
+
+
+
+
+    getMovies: async (): Promise<Movie[]> => {
+        try {
+            const movieList = await axios.get("http://localhost:8080/api/movie/getList");
+
+            return movieList.data;
+        } catch (error) {
             throw new Error("error");
         }
     },
