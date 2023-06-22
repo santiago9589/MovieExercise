@@ -33,7 +33,7 @@ public class ProtagonistController implements ControllerImp<Protagonist,Long> {
 
     @PostMapping("/addOne")
     @Override
-    public Protagonist addOneController(Protagonist protagonist) {
+    public Protagonist addOneController(@RequestBody Protagonist protagonist) {
         Protagonist protagonistFound = protagonistServices.addOneRecord(protagonist);
         return protagonistFound;
     }
@@ -47,7 +47,7 @@ public class ProtagonistController implements ControllerImp<Protagonist,Long> {
 
     @RequestMapping("/updateOne/{id}")
     @Override
-    public Protagonist updateOneController(Protagonist protagonist,@PathVariable Long id) {
+    public Protagonist updateOneController(@RequestBody  Protagonist protagonist,@PathVariable Long id) {
         Protagonist updateProtagonist = protagonistServices.updateOneRecord(protagonist,id);
         return updateProtagonist;
     }

@@ -30,7 +30,6 @@ public class MovieController implements ControllerImp<Movie,Long> {
     @GetMapping("/getList")
     @Override
     public List<Movie> getAllController() {
-
         List<Movie> listMovieFound = movieServices.getAllRecords();
         return listMovieFound;
     }
@@ -39,9 +38,7 @@ public class MovieController implements ControllerImp<Movie,Long> {
     @PostMapping("/addOne")
     @Override
     public Movie addOneController(@RequestBody Movie movie) {
-        System.out.println(movie);
         Movie newMovie = movieServices.addOneRecord(movie);
-
         return newMovie;
     }
 
@@ -54,7 +51,7 @@ public class MovieController implements ControllerImp<Movie,Long> {
 
     @RequestMapping("/updateOne/{id}")
     @Override
-    public Movie updateOneController(Movie movie,@PathVariable Long id) {
+    public Movie updateOneController(@RequestBody Movie movie,@PathVariable Long id) {
         Movie updateMovie = movieServices.updateOneRecord(movie,id);
         return updateMovie;
     }

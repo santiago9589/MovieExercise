@@ -1,7 +1,7 @@
 import { Protagonist } from "./Protagonist";
 
 export interface Movie {
-    id: number,
+    id: number | null,
     nameMovie: string,
     genderMovie: string,
     datePublished: Date | null,

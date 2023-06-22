@@ -15,9 +15,9 @@ export const api = {
             throw new Error("error");
         }
     },
-    addProtagonist: async (newProtagonist : Protagonist): Promise<Protagonist> => {
+    addProtagonist: async (newProtagonist: Protagonist): Promise<Protagonist> => {
         try {
-            const protagonistAdded = await axios.post("http://localhost:8080/api/protagonist/addOne",{
+            const protagonistAdded = await axios.post("http://localhost:8080/api/protagonist/addOne", {
                 newProtagonist
             });
 
@@ -26,7 +26,7 @@ export const api = {
             throw new Error("error");
         }
     },
-    getOneProtagonist: async (id:string): Promise<Protagonist> => {
+    getOneProtagonist: async (id: string): Promise<Protagonist> => {
         try {
             const getProtagonist = await axios.get(`http://localhost:8080/api/protagonist/getOneProtagonist/${id}`);
 
@@ -34,32 +34,32 @@ export const api = {
         } catch (error) {
             throw new Error("error");
         }
-    }, 
-    deleteProtagonist:async (id:string): Promise<string> => {
+    },
+    deleteProtagonist: async (id: string): Promise<string> => {
 
         try {
 
             const response = await axios.delete(`http://localhost:8080/api/protagonist/deleteOne/${id}`);
 
-        return response.data
-            
+            return response.data
+
         } catch (error) {
-            
+
             throw new Error("error");
         }
     },
-    updateProtagonist:async (id:string,protagonist:Protagonist): Promise<Protagonist> => {
+    updateProtagonist: async (id: string, protagonist: Protagonist): Promise<Protagonist> => {
 
         try {
 
-        const response = await axios.put(`http://localhost:8080/api/protagonist/updateOne/${id}`,{
-            protagonist
-        });
+            const response = await axios.put(`http://localhost:8080/api/protagonist/updateOne/${id}`, {
+                protagonist
+            });
 
-        return response.data
-            
+            return response.data
+
         } catch (error) {
-            
+
             throw new Error("error");
         }
     },
@@ -75,35 +75,28 @@ export const api = {
             throw new Error("error");
         }
     },
-    getOneMovie: async (id:string): Promise<Movie> => {
+    getOneMovie: async (id: string): Promise<Movie> => {
 
         try {
 
             const oneMovie = await axios.get(`http://localhost:8080/api/movie/getOneMovie/${id}`);
 
-        return oneMovie.data
-            
+            return oneMovie.data
+
         } catch (error) {
-            
+
             throw new Error("error");
         }
     },
     addOneMovie: async (movie: Movie): Promise<Movie> => {
-        
-        console.log(movie)
 
-        const movieJson = JSON.stringify(movie)
-     
 
         try {
 
-            const movieAdded = await axios.post("http://localhost:8080/api/movie/addOne",movie, 
-            {
-                headers: { 'Content-Type': 'application/json' }
-            }, 
-
-
-
+            const movieAdded = await axios.post("http://localhost:8080/api/movie/addOne", movie,
+                {
+                    headers: { 'Content-Type': 'application/json' }
+                },
 
             );
 
@@ -114,31 +107,34 @@ export const api = {
             throw new Error("error");
         }
     },
-    deleteOneMovie:async (id:string): Promise<string> => {
+    deleteOneMovie: async (id: string): Promise<string> => {
 
         try {
 
             const response = await axios.delete(`http://localhost:8080/api/movie/deleteOne/${id}`);
 
-        return response.data
-            
+            return response.data
+
         } catch (error) {
-            
+
             throw new Error("error");
         }
     },
-    updateOneMovie:async (id:string,movie:Movie): Promise<Movie> => {
+    updateOneMovie: async (id: number, movie: Movie): Promise<Movie> => {
 
         try {
 
-        const response = await axios.put(`http://localhost:8080/api/movie/updateOne/${id}`,{
-            movie
-        });
+            const response = await axios.put(`http://localhost:8080/api/movie/updateOne/${id}`,
+                movie
+                ,
+                {
+                    headers: { 'Content-Type': 'application/json' }
+                },);
 
-        return response.data
-            
+            return response.data
+
         } catch (error) {
-            
+
             throw new Error("error");
         }
     },

@@ -4,7 +4,7 @@ import { Movie } from "./../types/Movie"
 import { api } from "./../api/api"
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
-import { PROSS_ADD_MOVIE, START_GET_MOVIE } from "./store/sliceMovie"
+import { PROSS_ADD_MOVIE, START_GET_MOVIE, PROSS_UPDATE_MOVIE } from "./store/sliceMovie"
 import { Protagonist } from '../types/Protagonist';
 
 interface appState {
@@ -33,18 +33,33 @@ function App() {
       }}>hfghgf</button>
 
       <button onClick={() => {
-        console.log("dfgsgsd")
         dispatch(PROSS_ADD_MOVIE({
-          id: 6,
-                    nameMovie: "fdfd",
-                    genderMovie: "Dfdfd",
-                    datePublished:null,
-                    Raiting: 5,
-                    imageMovie: "fdfd",
-                    resumenMovie: "fdf",
-                    listProtagonist:[]
+          id: 5,
+          nameMovie: "fdfd",
+          genderMovie: "Dfdfd",
+          datePublished: null,
+          Raiting: 5,
+          imageMovie: "fdfd",
+          resumenMovie: "fdf",
+          listProtagonist: []
         }))
-      }}>CREERERE</button>
+      }}>CREAR</button>
+      <button onClick={() => {
+        dispatch(PROSS_UPDATE_MOVIE({
+          id: 1,
+          Movie: {
+            id: null,
+            nameMovie: "MODIFICAR",
+            genderMovie: "MODIFICAR",
+            datePublished: null,
+            Raiting: 5,
+            imageMovie: "fdfd",
+            resumenMovie: "fdf",
+            listProtagonist: []
+          }
+
+        }))
+      }}>MODIFICAR</button>
 
     </>
   )

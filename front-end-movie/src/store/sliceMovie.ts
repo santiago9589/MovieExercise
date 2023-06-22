@@ -25,6 +25,10 @@ const movieSlice = createSlice({
             state
             action
         },
+        PROSS_UPDATE_MOVIE(state, action:PayloadAction<{id:number,Movie:Movie}>) {
+            state
+            action
+        },
 
 
 
@@ -47,5 +51,5 @@ const movieSlice = createSlice({
         },
     }
 })
-export const { PROSS_ADD_MOVIE,PROSS_DELETE_MOVIE,PROSS_GET_MOVIE,START_GET_MOVIE } = movieSlice.actions
+export const { PROSS_UPDATE_MOVIE,PROSS_ADD_MOVIE,PROSS_DELETE_MOVIE,PROSS_GET_MOVIE,START_GET_MOVIE } = movieSlice.actions
 export default movieSlice.reducer

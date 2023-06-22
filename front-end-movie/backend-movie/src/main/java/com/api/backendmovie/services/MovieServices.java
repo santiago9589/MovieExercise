@@ -51,15 +51,19 @@ public class MovieServices implements Dao<Movie,Long> {
     @Override
     public Movie updateOneRecord(Movie movie,Long id) {
 
-        Movie updateMovie = MovieRepository.getReferenceById(id);
+        Optional<Movie> updateMovie = MovieRepository.findById(id);
 
-       updateMovie.setNameMovie(movie.getNameMovie());
-       updateMovie.setGenderMovie(movie.getGenderMovie());
-       updateMovie.setRaiting(movie.getRaiting());
-       updateMovie.setImageMovie(movie.getImageMovie());
+        if(!updateMovie.isPresent()){
+            return null;
+        }
 
-       MovieRepository.save(updateMovie);
+       updateMovie.get().setNameMovie(movie.getNameMovie());
+        updateMovie.get().setGenderMovie(movie.getGenderMovie());
+        updateMovie.get().setRaiting(movie.getRaiting());
+        updateMovie.get().setImageMovie(movie.getImageMovie());
 
-        return updateMovie;
+       MovieRepository.save(updateMovie.get());
+
+        return updateMovie.get();
     }
 }
