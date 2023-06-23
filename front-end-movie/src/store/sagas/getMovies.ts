@@ -6,7 +6,8 @@ import {PROSS_GET_MOVIE} from "../sliceMovie"
 
 function* getMovieData(action:PayloadAction<Movie>) {
     try {
-        const data : Movie[] = yield call(api.getMovies)
+        // const data : Movie[] = yield call(api.getMovies)
+        const data : Movie[] = yield call(api.getMoviesMock)
         yield put(PROSS_GET_MOVIE(data))
     } catch (error) {
        

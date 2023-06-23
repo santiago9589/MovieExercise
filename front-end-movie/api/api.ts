@@ -1,6 +1,7 @@
 import { Movie } from "../types/Movie";
 import axios from "axios";
 import { Protagonist } from "../types/Protagonist";
+import perrito from "./../src/assets/descarga.jpg"
 
 export const api = {
 
@@ -154,7 +155,7 @@ export const api = {
                     genderMovie: "juancho",
                     datePublished: new Date(),
                     Raiting: 2,
-                    imageMovie: "juancho",
+                    imageMovie: perrito,
                     resumenMovie: "juancho",
                     listProtagonist: []
                 },
@@ -164,7 +165,7 @@ export const api = {
                     genderMovie: "juancho",
                     datePublished: new Date(),
                     Raiting: 2,
-                    imageMovie: "juancho",
+                    imageMovie: perrito,
                     resumenMovie: "juancho",
                     listProtagonist: []
                 },
@@ -174,7 +175,136 @@ export const api = {
                     genderMovie: "juancho",
                     datePublished: new Date(),
                     Raiting: 2,
-                    imageMovie: "juancho",
+                    imageMovie: perrito,
+                    resumenMovie: "juancho",
+                    listProtagonist: []
+                },
+                {
+                    id: 4,
+                    nameMovie: "juancho",
+                    genderMovie: "juancho",
+                    datePublished: new Date(),
+                    Raiting: 2,
+                    imageMovie: perrito,
+                    resumenMovie: "juancho",
+                    listProtagonist: []
+                },
+                {
+                    id: 5,
+                    nameMovie: "juancho",
+                    genderMovie: "juancho",
+                    datePublished: new Date(),
+                    Raiting: 2,
+                    imageMovie: perrito,
+                    resumenMovie: "juancho",
+                    listProtagonist: []
+                },
+                {
+                    id: 6,
+                    nameMovie: "juancho",
+                    genderMovie: "juancho",
+                    datePublished: new Date(),
+                    Raiting: 2,
+                    imageMovie: perrito,
+                    resumenMovie: "juancho",
+                    listProtagonist: []
+                },
+                {
+                    id: 7,
+                    nameMovie: "juancho",
+                    genderMovie: "juancho",
+                    datePublished: new Date(),
+                    Raiting: 2,
+                    imageMovie: perrito,
+                    resumenMovie: "juancho",
+                    listProtagonist: []
+                },
+                {
+                    id: 8,
+                    nameMovie: "juancho",
+                    genderMovie: "juancho",
+                    datePublished: new Date(),
+                    Raiting: 2,
+                    imageMovie: perrito,
+                    resumenMovie: "juancho",
+                    listProtagonist: []
+                },
+                {
+                    id: 9,
+                    nameMovie: "juancho",
+                    genderMovie: "juancho",
+                    datePublished: new Date(),
+                    Raiting: 2,
+                    imageMovie: perrito,
+                    resumenMovie: "juancho",
+                    listProtagonist: []
+                }, {
+                    id: 10,
+                    nameMovie: "juancho",
+                    genderMovie: "juancho",
+                    datePublished: new Date(),
+                    Raiting: 2,
+                    imageMovie: perrito,
+                    resumenMovie: "juancho",
+                    listProtagonist: []
+                },
+                {
+                    id: 11,
+                    nameMovie: "juancho",
+                    genderMovie: "juancho",
+                    datePublished: new Date(),
+                    Raiting: 2,
+                    imageMovie: perrito,
+                    resumenMovie: "juancho",
+                    listProtagonist: []
+                },
+                {
+                    id: 12,
+                    nameMovie: "juancho",
+                    genderMovie: "juancho",
+                    datePublished: new Date(),
+                    Raiting: 2,
+                    imageMovie: perrito,
+                    resumenMovie: "juancho",
+                    listProtagonist: []
+                },
+                {
+                    id: 13,
+                    nameMovie: "juancho",
+                    genderMovie: "juancho",
+                    datePublished: new Date(),
+                    Raiting: 2,
+                    imageMovie: perrito,
+                    resumenMovie: "juancho",
+                    listProtagonist: []
+                },
+                {
+                    id: 14,
+                    nameMovie: "juancho",
+                    genderMovie: "juancho",
+                    datePublished: new Date(),
+                    Raiting: 2,
+                    imageMovie: perrito,
+                    resumenMovie: "juancho",
+                    listProtagonist: []
+                },
+                {
+                    id: 15,
+                    nameMovie: "juancho",
+                    genderMovie: "juancho",
+                    datePublished: new Date(),
+                    Raiting: 2,
+                    imageMovie: perrito,
+                    resumenMovie: "juancho",
+                    listProtagonist: []
+                },
+                {
+                    id: 16,
+                    nameMovie: "juancho",
+                    genderMovie: "juancho",
+                    datePublished: new Date(),
+                    Raiting: 2,
+                    imageMovie: perrito,
                     resumenMovie: "juancho",
                     listProtagonist: []
                 }
@@ -193,7 +323,7 @@ export const api = {
                 genderMovie: "juancho",
                 datePublished: new Date(),
                 Raiting: 2,
-                imageMovie: "juancho",
+                imageMovie: perrito,
                 resumenMovie: "juancho",
                 listProtagonist: []
             };
@@ -224,7 +354,7 @@ export const api = {
                 genderMovie: "juancho",
                 datePublished: new Date(),
                 Raiting: 2,
-                imageMovie: "juancho",
+                imageMovie: perrito,
                 resumenMovie: "juancho",
                 listProtagonist: []
             };
