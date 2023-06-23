@@ -4,11 +4,13 @@ import type { PayloadAction } from '@reduxjs/toolkit'
 
 
 interface movieState {
-    movies: Movie[]
+    movies: Movie[],
+    initialMovie:Movie | null
 }
 
 const initialAppState: movieState = {
     movies: [],
+    initialMovie: null
 }
 
 const movieSlice = createSlice({
@@ -34,8 +36,12 @@ const movieSlice = createSlice({
             action
         },
 
+        PROSS_INITIAL_MOVIE(state, action: PayloadAction<Movie>) {
+            state.initialMovie = action.payload
+        },
+
 
     }
 })
-export const { PROSS_UPDATE_MOVIE,PROSS_ADD_MOVIE,PROSS_DELETE_MOVIE,PROSS_GET_MOVIE,START_GET_MOVIE } = movieSlice.actions
+export const { PROSS_INITIAL_MOVIE,PROSS_UPDATE_MOVIE,PROSS_ADD_MOVIE,PROSS_DELETE_MOVIE,PROSS_GET_MOVIE,START_GET_MOVIE } = movieSlice.actions
 export default movieSlice.reducer
