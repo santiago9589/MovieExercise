@@ -1,66 +1,75 @@
 import React from 'react'
-import { Movie } from '../types/Movie';
-import { useDispatch, useSelector } from 'react-redux';
-import { useEffect } from "react";
-import { PROSS_INITIAL_MOVIE, START_GET_MOVIE } from '../src/store/sliceMovie';
-import { Link, useLocation } from "wouter"
-import {stateProps} from "./../types/appState"
-
-
+import fondo from "../src/assets/golden_-_48569 (1080p).mp4"
+import FormComponent from "./../components/form/form"
+import InputComponent from "./../components/form/input"
+import ButtomComponent from "./../components/form/buttom"
+import { useFormik } from 'formik'
+import * as Yup from "yup"
+import { User } from "./../types/user"
 
 const Home = () => {
-  const { movies } = useSelector((state: stateProps) => state.appReducer)
-  const state = useSelector((state: stateProps) => state.appReducer)
-  const dispatch = useDispatch()
-  const [location, navigate] = useLocation()
 
-  useEffect(() => {
-    dispatch(START_GET_MOVIE())
-  }, [])
-
-  const modifyInitialMovie = (movie: Movie) => {
-    dispatch(PROSS_INITIAL_MOVIE(movie))
+  const initialValues: User = {
+    email: "",
+    username: "",
+    password: ""
   }
 
+  const validateSchema = Yup.object().shape({
+    email: Yup.string().required(),
+    password: Yup.string().required(),
+    username: Yup.string().required(),
+  })
+
+  const formik = useFormik<User>({
+    initialValues,
+    validationSchema: validateSchema,
+    onSubmit: (async (values) => {
+      console.log(values)
+    })
+  })
+
+  const { handleChange, handleSubmit, values, touched, errors } = formik
+
   return (
-    <section className='grid grid-cols-5 grid-rows-4 w-full h-screen'>
-      <section className={`col-span-5 row-span-2 relative`}>
-        <div className={` flex flex-col items-center justify-around hover:opacity-30 bg-black absolute w-full h-full opacity-0`}>
-          <h2 className='text-6xl uppercase'>{state.movies.initialMovie.nameMovie}</h2>
-          <p onClick={() => {
-            navigate(`/details/${state.movies.initialMovie.id}`)
-          }} className='text-3xl lowercase'>VER DETALLE</p>
-        </div>
-        <img className='h-full w-full' src={state.movies.initialMovie.imageMovie} alt="movie.img" />
-      </section>
-      <section className='col-span-5 row-start-3 row-span-2 flex justify-around gap-4 flex-wrap overflow-y-auto p-4'>
-        {
-          movies.movies.map((movie) => {
-            return (
-              <article onClick={() => { modifyInitialMovie(movie) }} key={movie.id} className='grid grid-cols-2 grid-rows-3 border-2 border-white w-1/5 h-[450px]'>
-                <img className='col-span-2 row-span-2 w-full' src={movie.imageMovie} alt="movie.img" />
-                <section className='col-span-2 row-span-1 mt-2 px-2 flex flex-col justify-around'>
-                  <header className='flex justify-between items-center'>
-                    <h2 className='mt-2 text-2xl'>{movie.nameMovie}</h2>
-                    <p>{"★".repeat(movie.Raiting).padEnd(5, "☆")}</p>
-                  </header>
-                  <footer className='flex justify-between items-center'>
-                    <h3 className='mt-2 text-2xl'>{movie.datePublished?.toLocaleString("es-AR", {
-                      year: "numeric",
-                      month: "numeric",
-                      day: "numeric"
-                    })}</h3>
-                    <h3 className='mt-2 text-2xl'>{movie.genderMovie}</h3>
-                  </footer>
-                </section>
-              </article>
-            )
-          })
-        }
+    <section className="h-screen flex items-center justify-center">
+      <video className='h-screen absolute bg-cover top-0 left-0' autoPlay muted loop>
+        <source src={fondo} type="video/mp4" />
+      </video>
+      <section
+        className='absolute top-0 left-0 w-full h-full bg-black opacity-30'
+      ></section>
+      <section className=' w-[700px] h-[500px] z-30 bg-gradient-to-r from-black via-yellow-700 to-black rounded-2xl  relative '>
+        <FormComponent handleSubmit={handleSubmit}>
+          <InputComponent
+            type="text"
+            value={values.email}
+            handleChange={handleChange}
+            name="email"
+            errors={errors.email || ""}
+            touched={touched.email || false}
+          />
+          <InputComponent
+            type="text"
+            value={values.username}
+            handleChange={handleChange}
+            name="username"
+            errors={errors.username || ""}
+            touched={touched.username || false}
+          />
+          <InputComponent
+            type="text"
+            value={values.password}
+            handleChange={handleChange}
+            name="password"
+            errors={errors.password || ""}
+            touched={touched.password || false}
+          />
+          <ButtomComponent name='Login'/>
+        </FormComponent>
       </section>
     </section>
   )
 }
 
 export default Home
-
