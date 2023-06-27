@@ -12,8 +12,13 @@ import java.util.Optional;
 @Service
 public class ProtagonistServices implements Dao<Protagonist,Long> {
 
-    @Autowired
+
     private ProtagonistRepository ProtagonistRepository;
+
+
+    public ProtagonistServices(ProtagonistRepository protagonistRepository) {
+        ProtagonistRepository = protagonistRepository;
+    }
 
     @Override
     public Protagonist getOneRecord(Long id) {

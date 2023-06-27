@@ -13,8 +13,12 @@ import java.util.Optional;
 @Service
 public class MovieServices implements Dao<Movie,Long> {
 
-    @Autowired
+
     private MovieRepository MovieRepository;
+
+    public MovieServices(MovieRepository movieRepository) {
+        MovieRepository = movieRepository;
+    }
 
     @Override
     public Movie getOneRecord(Long id) {
